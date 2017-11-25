@@ -1,0 +1,88 @@
+// ==========================================================================
+// Module
+// Major code and styling for the project is divided into modules and kept here.
+// Modular division examples include division of partials into header, main, footer, banner etc.
+// For most SPAs partials are divided according to their respective components.
+// Example: AppContainer.jsx component for React will have a related partial named "_app-container.jsx".
+// This partial can be removed or renamed to something common like "_header.scss".
+//
+// ---------------------------------------------------------------------------
+//
+// Other module partials example:
+// _header.scss
+// _forms.scss
+// _footer.scss
+// _container.scss
+// _common.scss
+// ==========================================================================
+
+.card {
+  @extend %shadow;
+  background: $white-alt;
+  width: 100%;
+  height: 390px;
+  float: left;
+  margin-top: 30px;
+  transition: all 0.3s ease-in;
+  @include mq(sm){
+    width: 32%;
+    margin-right: 2%;
+  }
+  @include mq(md){
+    width: 30%;
+    margin-right: 5%;
+  }
+  &:hover{
+    transform: scale(1.04);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+  a{
+    display: block;
+    color: $black;
+    text-decoration: none;
+  }
+  @include e(img){
+    display: block;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include e(info){
+    padding: 20px;
+  }
+  @include e(title){
+    @extend %ellipsis;
+    font-size: 16px;
+  }
+  @include e(infobar){
+    margin-top: 5px;
+    li{
+      float: left;
+      font-size: 12px;
+      color: $text-gray;
+      &:after{
+        content: "|";
+        margin: 0 5px;
+        display: inline;
+      }
+      &:last-child:after{
+        content: "";
+      }
+    }
+  }
+  @include e(para){
+    font-size: 14px;
+    margin-top: 20px;
+    height: 76px;
+    overflow: hidden;
+  }
+  &:nth-child(3n){
+    margin-right: 0;
+  }
+}

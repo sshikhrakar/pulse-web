@@ -1,0 +1,58 @@
+{
+  "name": "sass-starter",
+  "version": "0.0.1",
+  "description": "Basic Sass outline with SMACSS architecture.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "html": "cpx *.html dist/",
+    "watch:html": "cpx *.html dist/ --watch",
+    "fonts": "cpx fonts/**/* dist/fonts",
+    "clean": "rimraf dist/",
+    "clean:dist": "rimraf dist/**/* !dist/images/ ! dist/images/**/*",
+    "sass": "node-sass --source-map true sass/style.scss -o dist/css/",
+    "watch:sass": "node-sass --source-map true sass/style.scss -wo dist/css/",
+    "imagemin": "imagemin images/**/* --out-dir=dist/images/",
+    "start": "concurrently \"npm run watch:html\" \"npm run watch:sass\" \"npm run serve\"",
+    "build": "npm install && npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run html",
+    "serve": "live-server --open=dist/ --port=8080",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshikhrakar/Sass-Starter.git"
+  },
+  "author": "Shirish Shikhrakar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sshikhrakar/Sass-Starter/issues"
+  },
+  "homepage": "https://github.com/sshikhrakar/Sass-Starter#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "concurrently": "^3.5.0",
+    "connect-history-api-fallback": "^1.3.0",
+    "cpx": "^1.5.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-ruby-sass": "^2.1.1",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-uglify": "^2.0.0",
+    "gulp-useref": "^3.1.2",
+    "gulp-watch": "^4.3.11",
+    "imagemin-cli": "^3.0.0",
+    "live-server": "^1.2.0",
+    "node-sass": "^4.5.3",
+    "rimraf": "^2.6.2",
+    "run-sequence": "^1.2.2"
+  },
+  "dependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
