@@ -153,8 +153,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     (function () {
-      var flickerAPI = "https://api.pulsenepal.com/api/v1/pulses";
-      $.getJSON(flickerAPI, {})
+      var pulseAPI = "https://api.pulsenepal.com/api/v1/pulses";
+      $.getJSON(pulseAPI, {})
         .done(function (response) {
           if (response.status == "OK") {
             var pulses = response.data;
