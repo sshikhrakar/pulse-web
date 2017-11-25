@@ -39,8 +39,8 @@
           if (response.status == "OK") {
             var pulses = response.data;
             for (var i = 0; i < 10; i++) {
-              var pulse = pulses[i];
-              var li = '<li class="card">'+
+               var pulse = pulses[i];
+               var li = '<li class="card">'+
                          '<a href=" ' + pulse.url + ' ">' +
                          '<div class="card__img">' +
                             '<img src="' + pulse.lead_image_url + '" alt="">'+
@@ -56,8 +56,8 @@
                           '</a>'+
                         '</li>'
 
-              $(".row ul").append(li);     
-            }
+              $(".row ul").append(li); 
+            }          
           }
         });
     })();
