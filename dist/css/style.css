@@ -1490,11 +1490,6 @@ a:after, span:after, strong:after {
 .card {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02); }
 
-.card__title {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
-
 /* Sass Compiled Css Code Start */
 * {
   margin: 0;
@@ -1547,7 +1542,8 @@ main {
 header {
   height: 70px;
   border-bottom: 1px solid #E6EAEA;
-  padding: 20px; }
+  padding: 20px;
+  background: #fff; }
 
 .logo {
   font-size: 24px;
@@ -1562,7 +1558,8 @@ header {
   height: 390px;
   float: left;
   margin-top: 30px;
-  transition: all 0.3s ease-in; }
+  transition: all 0.3s ease-in;
+  overflow: hidden; }
   @media (min-width: 768px) {
     .card {
       width: 32%;
@@ -1611,6 +1608,75 @@ header {
     overflow: hidden; }
   .card:nth-child(3n) {
     margin-right: 0; }
+
+.stories h2 {
+  padding: 2.5rem 0 0.625rem;
+  text-align: center;
+  position: relative;
+  text-transform: uppercase; }
+  .stories h2 span {
+    display: inline-block;
+    background: #f4f7f6;
+    padding: 0 1.875rem;
+    font-weight: normal;
+    letter-spacing: 2px; }
+  .stories h2:before, .stories h2:after {
+    content: "";
+    width: 40%;
+    height: 1px;
+    background: #d7d7d7;
+    display: block;
+    position: absolute;
+    top: 68%;
+    z-index: -1; }
+  .stories h2:before {
+    left: 0; }
+  .stories h2:after {
+    right: 0; }
+
+@media (min-width: 768px) {
+  .highlight-layout .card {
+    width: 32%;
+    margin-right: 2%; } }
+
+@media (min-width: 992px) {
+  .highlight-layout .card:nth-child(1) {
+    width: 48%;
+    margin-right: 2%; }
+    .highlight-layout .card:nth-child(1) .card__title {
+      font-size: 28px; } }
+
+@media (min-width: 992px) {
+  .highlight-layout .card {
+    width: 24%;
+    margin-right: 2%;
+    height: 450px; }
+    .highlight-layout .card__img {
+      height: 230px; }
+    .highlight-layout .card__title {
+      font-size: 20px; } }
+
+.highlight-layout .card:nth-child(3n) {
+  margin-right: 0; }
+
+@media (min-width: 768px) {
+  .dense-layout .card {
+    width: 32%;
+    margin-right: 2%; }
+    .dense-layout .card:nth-child(3n) {
+      margin-right: 0; } }
+
+@media (min-width: 992px) {
+  .dense-layout .card {
+    width: 23%;
+    margin-right: 2.6%;
+    height: 350px; }
+    .dense-layout .card__img {
+      height: 180px; }
+    .dense-layout .card:nth-child(3n) {
+      margin-right: 2.6%; }
+    .dense-layout .card:nth-child(4n) {
+      margin-right: 0; } }
 
 @media (min-width: 768px) {
   .is-collapsed-mobile {

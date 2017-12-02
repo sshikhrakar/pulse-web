@@ -1,0 +1,160 @@
+.card {
+  @extend %shadow;
+  background: $white-alt;
+  width: 100%;
+  height: 390px;
+  float: left;
+  margin-top: 30px;
+  transition: all 0.3s ease-in;
+  overflow: hidden;
+  @include mq(sm){
+    width: 32%;
+    margin-right: 2%;
+  }
+  @include mq(md){
+    width: 30%;
+    margin-right: 5%;
+  }
+  &:hover{
+    transform: scale(1.04);
+    transition: all 0.3s ease-out;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.06);
+  }
+  a{
+    display: block;
+    color: $black;
+    text-decoration: none;
+  }
+  @include e(img){
+    display: block;
+    width: 100%;
+    height: 210px;
+    overflow: hidden;
+    img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  @include e(info){
+    padding: 20px;
+  }
+  @include e(title){
+    font-size: 16px;
+  }
+  @include e(infobar){
+    margin-top: 5px;
+    li{
+      float: left;
+      font-size: 12px;
+      color: $text-gray;
+      &:after{
+        content: "|";
+        margin: 0 5px;
+        display: inline;
+      }
+      &:last-child:after{
+        content: "";
+      }
+    }
+  }
+  @include e(para){
+    font-size: 14px;
+    margin-top: 20px;
+    height: 76px;
+    overflow: hidden;
+  }
+  &:nth-child(3n){
+    margin-right: 0;
+  }
+}
+
+.stories{
+  h2{
+    padding: rem(40px) 0 rem(10px);
+    text-align: center;
+    position: relative;
+    text-transform: uppercase;
+    span{
+      display: inline-block;
+      background: $bg-gray;
+      padding: 0 rem(30px);
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+    &:before,&:after{
+      content: "";
+      width: 40%;
+      height: 1px;
+      background: $border-color;
+      display: block;
+      position: absolute;
+      top: 68%;
+      z-index: -1;
+    }
+    &:before{
+      left: 0
+    }
+    &:after{
+      right: 0;
+    }
+  }
+}
+
+.highlight-layout{
+  .card {
+    @include mq(sm){
+      width: 32%;
+      margin-right: 2%;
+    }
+    &:nth-child(1){
+      @include mq(md){
+        width: 48%;
+        margin-right: 2%;
+        .card__title{
+          font-size: 28px;
+        }
+      }
+    }
+    @include mq(md){
+      width: 24%;
+      margin-right: 2%;
+      height: 450px;
+      @include e(img){
+        height: 230px;
+      }
+      @include e(title){
+        font-size: 20px;
+      }
+    }
+    &:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+}
+
+.dense-layout{
+  .card {
+    @include mq(sm){
+      width: 32%;
+      margin-right: 2%;
+      &:nth-child(3n){
+        margin-right: 0;
+      }
+    }
+    @include mq(md){
+      width: 23%;
+      margin-right: 2.6%;
+      height: 350px;
+      @include e(img){
+        height: 180px;
+      }
+      &:nth-child(3n){
+        margin-right: 2.6%;
+      }
+      &:nth-child(4n){
+        margin-right: 0;
+      }
+    }
+  }
+}
