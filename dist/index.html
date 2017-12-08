@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Pulse Nepal</title>
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!--build:css css/style.css-->
   <link rel="stylesheet" href="css/style.css">
   <!--endbuild-->
@@ -25,18 +25,19 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="highlight-layout stories">
-          <h2><span>Hottest Stories</span></h2>
-          <ul class="card-wrapper">
-          </ul>
-        </div>
+          <div class="highlight-layout stories">
+              <div class="card-wrapper">
+              </div>
+          </div>
+      </div>
+      <div class="row">
         <div class="normal-layout stories">
-          <h2><span>Top Stories</span></h2>
+          <h2><span>POPULAR</span></h2>
           <ul class="card-wrapper">
           </ul>
         </div>
         <div class="dense-layout stories">
-          <h2><span>Latest</span></h2>
+          <h2><span>NEPAL'S STORIES</span></h2>
           <ul class="card-wrapper">
           </ul>
         </div>
@@ -51,27 +52,30 @@
         .done(function (response) {
           if (response.status == "OK") {
             var pulses = response.data;
-            for (var i = 4; i < 10; i++) {
-               var pulse = pulses[i];
-               var li = '<li class="card">'+
-                         '<a href=" ' + pulse.url + ' " target="_blank">' +
-                         '<div class="card__img">' +
-                            '<img src="' + pulse.lead_image_url + '" alt="">'+
-                          '</div>'+
-                          '<div class="card__info">'+
-                          '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
-                          '<ul class="card__infobar">'+
-                            '<li>' + pulse.domain + '</li>'+
-                          '</ul>'+
-                          '<p class="card__para">' + pulse.excerpt + '</p>'+
-                          '</div>'+
-                          '</a>'+
-                        '</li>'
-
-              $(".normal-layout .card-wrapper").append(li);
+            
+            if (pulses.hot.length > 0) {
+              var pulse = pulses.hot[0];
+              var div = '<div>'+
+                      '<a href=" ' + pulse.url + ' " target="_blank">' +
+                      '<div class="card__img">' +
+                        '<img src="' + pulse.lead_image_url + '" alt="">'+
+                      '</div>'+
+                      '<div class="card__info">'+
+                      '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
+                      '<ul class="card__infobar">'+
+                        '<li>' + pulse.domain + '</li>'+
+                      '</ul>'+
+                      '<p class="card__para">' + pulse.excerpt + '</p>'+
+                      '</div>'+
+                      '</a>'+
+                    '</div>'
+              $(".highlight-layout .card-wrapper").append(div);
             }
-            for (var i = 0; i < 3; i++) {
-               var pulse = pulses[i];
+
+            if (pulses.popular.length > 0) {
+              var popular = pulses.popular;
+              for (var i = 0; i < popular.length; i++) {
+               var pulse = popular[i];
                var li = '<li class="card">'+
                          '<a href=" ' + pulse.url + ' " target="_blank">' +
                          '<div class="card__img">' +
@@ -87,10 +91,13 @@
                           '</a>'+
                         '</li>'
 
-              $(".highlight-layout .card-wrapper").append(li);
+                  $(".normal-layout .card-wrapper").append(li);
+              }
             }
-            for (var i = 12; i < 20; i++) {
-               var pulse = pulses[i];
+            if (pulses.all.length > 0) {
+              var all = pulses.all;
+              for (var i = 0; i < all.length; i++) {
+               var pulse = all[i];
                var li = '<li class="card">'+
                          '<a href=" ' + pulse.url + ' " target="_blank">' +
                          '<div class="card__img">' +
@@ -106,7 +113,8 @@
                           '</a>'+
                         '</li>'
 
-              $(".dense-layout .card-wrapper").append(li);
+                $(".dense-layout .card-wrapper").append(li);
+              }
             }
           }
         });

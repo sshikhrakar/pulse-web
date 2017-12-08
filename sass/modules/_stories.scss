@@ -1,11 +1,9 @@
 .card {
-  @extend %shadow;
   background: $white-alt;
   width: 100%;
-  height: 390px;
+  height: 500px;
   float: left;
   margin-top: 30px;
-  transition: all 0.3s ease-in;
   overflow: hidden;
   @include mq(sm){
     width: 32%;
@@ -16,9 +14,7 @@
     margin-right: 5%;
   }
   &:hover{
-    transform: scale(1.04);
-    transition: all 0.3s ease-out;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.06);
+    cursor:pointer;
   }
   a{
     display: block;
@@ -40,13 +36,13 @@
     padding: 20px;
   }
   @include e(title){
-    font-size: 16px;
+    font-size: 20px;
   }
   @include e(infobar){
     margin-top: 5px;
     li{
       float: left;
-      font-size: 12px;
+      font-size: 14px;
       color: $text-gray;
       &:after{
         content: "|";
@@ -112,7 +108,7 @@
         width: 48%;
         margin-right: 2%;
         .card__title{
-          font-size: 28px;
+          font-size: 16px;
         }
       }
     }
@@ -145,7 +141,7 @@
     @include mq(md){
       width: 23%;
       margin-right: 2.6%;
-      height: 350px;
+      height: 400px;
       @include e(img){
         height: 180px;
       }

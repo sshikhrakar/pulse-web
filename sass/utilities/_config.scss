@@ -30,7 +30,7 @@ $base__line: 24px;
 //);
 
 $font-family-sans-fallback: 'Arial', sans-serif;
-$font-family-sans: 'Source Sans Pro', 'Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
+$font-family-sans: 'Lato', 'Helvetica Neue', 'Helvetica', $font-family-sans-fallback;
 $font-family-serif: 'Georgia', 'Cambria', 'Times New Roman', 'Times', serif;
 $font-family-monospace: 'Inconsolata', 'Menlo', 'Consolas', 'Bitstream Vera Sans Mono', 'Courier', monospace;
 $font-family--primary : $font-family-sans;
@@ -93,13 +93,13 @@ $head3-font-size: $head1-font-size - 8px !default;
 $primary-color: $white;
 $secondary-color: $black;
 $accent-color: $gray;
-$shadow-color: rgba($black, .2);
+$shadow-color: rgba($black, 0);
 $border-color: $gray;
 $color-text: $black;
 $text-gray: #565656;
 $color-link: $blue;
-$bg-gray: #f4f7f6;
-$white-alt: #fcfcfc;
+$bg-gray: #fff;
+$white-alt: #fff;
 
 //Path to Assets
 $path--rel: "../images";

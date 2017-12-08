@@ -1487,9 +1487,6 @@ tbody.collapse.in {
 a:after, span:after, strong:after {
   display: inherit; }
 
-.card {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02); }
-
 /* Sass Compiled Css Code Start */
 * {
   margin: 0;
@@ -1506,9 +1503,9 @@ html, body {
 body {
   -webkit-font-smoothing: antialiased;
   color: #202121;
-  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   text-rendering: optimizeLegibility;
-  background: #f4f7f6; }
+  background: #fff; }
 
 a {
   outline: none;
@@ -1520,7 +1517,7 @@ ul, ol {
   list-style: none; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   margin: 0; }
 
 h1 {
@@ -1553,12 +1550,11 @@ header {
   text-transform: uppercase; }
 
 .card {
-  background: #fcfcfc;
+  background: #fff;
   width: 100%;
-  height: 390px;
+  height: 500px;
   float: left;
   margin-top: 30px;
-  transition: all 0.3s ease-in;
   overflow: hidden; }
   @media (min-width: 768px) {
     .card {
@@ -1569,9 +1565,7 @@ header {
       width: 30%;
       margin-right: 5%; } }
   .card:hover {
-    transform: scale(1.04);
-    transition: all 0.3s ease-out;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 1px 4px rgba(0, 0, 0, 0.06); }
+    cursor: pointer; }
   .card a {
     display: block;
     color: #202121;
@@ -1588,12 +1582,12 @@ header {
   .card__info {
     padding: 20px; }
   .card__title {
-    font-size: 16px; }
+    font-size: 20px; }
   .card__infobar {
     margin-top: 5px; }
     .card__infobar li {
       float: left;
-      font-size: 12px;
+      font-size: 14px;
       color: #565656; }
       .card__infobar li:after {
         content: "|";
@@ -1616,7 +1610,7 @@ header {
   text-transform: uppercase; }
   .stories h2 span {
     display: inline-block;
-    background: #f4f7f6;
+    background: #fff;
     padding: 0 1.875rem;
     font-weight: normal;
     letter-spacing: 2px; }
@@ -1644,7 +1638,7 @@ header {
     width: 48%;
     margin-right: 2%; }
     .highlight-layout .card:nth-child(1) .card__title {
-      font-size: 28px; } }
+      font-size: 16px; } }
 
 @media (min-width: 992px) {
   .highlight-layout .card {
@@ -1670,7 +1664,7 @@ header {
   .dense-layout .card {
     width: 23%;
     margin-right: 2.6%;
-    height: 350px; }
+    height: 400px; }
     .dense-layout .card__img {
       height: 180px; }
     .dense-layout .card:nth-child(3n) {
@@ -1703,7 +1697,7 @@ header {
     box-shadow: none !important;
     text-shadow: none !important; }
   body {
-    font: 12pt "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font: 12pt "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height: 1.3; }
   a,
   a:visited {
