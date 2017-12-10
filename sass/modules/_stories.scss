@@ -1,17 +1,30 @@
 .card {
   background: $white-alt;
   width: 100%;
-  height: 500px;
+  height: 376px;
   float: left;
-  margin-top: 30px;
   overflow: hidden;
+  padding: rem(20px);
+  border: 1px solid $border-color;
+  border-left: 0;
+  border-top: 0;
+  position: relative;
+  &:nth-child(3n){
+    border-right: 0;
+  }
+  &:after{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background: $white;
+  }
   @include mq(sm){
-    width: 32%;
-    margin-right: 2%;
+    width: 33.33%;
   }
   @include mq(md){
-    width: 30%;
-    margin-right: 5%;
+    height: 400px;
   }
   &:hover{
     cursor:pointer;
@@ -24,16 +37,19 @@
   @include e(img){
     display: block;
     width: 100%;
-    height: 210px;
+    height: 130px;
     overflow: hidden;
     img{
       object-fit: cover;
       width: 100%;
       height: 100%;
     }
+    @include mq(md){
+      height: 175px;
+    }
   }
   @include e(info){
-    padding: 20px;
+    padding-top: 20px;
   }
   @include e(title){
     font-size: 20px;
@@ -57,8 +73,12 @@
   @include e(para){
     font-size: 14px;
     margin-top: 20px;
-    height: 76px;
+    height: 56px;
     overflow: hidden;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   &:nth-child(3n){
     margin-right: 0;
@@ -67,89 +87,22 @@
 
 .stories{
   h2{
-    padding: rem(40px) 0 rem(10px);
-    text-align: center;
+    text-align: left;
     position: relative;
     text-transform: uppercase;
+    line-height: 1;
+    padding-left: 20px;
     span{
       display: inline-block;
       background: $bg-gray;
-      padding: 0 rem(30px);
-      font-weight: normal;
+      // padding: 0 rem(30px);
+      font-weight: bold;
+      font-size: rem(14px);
       letter-spacing: 2px;
-    }
-    &:before,&:after{
-      content: "";
-      width: 40%;
-      height: 1px;
-      background: $border-color;
-      display: block;
-      position: absolute;
-      top: 68%;
-      z-index: -1;
-    }
-    &:before{
-      left: 0
-    }
-    &:after{
-      right: 0;
-    }
-  }
-}
-
-.highlight-layout{
-  .card {
-    @include mq(sm){
-      width: 32%;
-      margin-right: 2%;
-    }
-    &:nth-child(1){
-      @include mq(md){
-        width: 48%;
-        margin-right: 2%;
-        .card__title{
-          font-size: 16px;
-        }
-      }
-    }
-    @include mq(md){
-      width: 24%;
-      margin-right: 2%;
-      height: 450px;
-      @include e(img){
-        height: 230px;
-      }
-      @include e(title){
-        font-size: 20px;
-      }
-    }
-    &:nth-child(3n){
-      margin-right: 0;
-    }
-  }
-}
-
-.dense-layout{
-  .card {
-    @include mq(sm){
-      width: 32%;
-      margin-right: 2%;
-      &:nth-child(3n){
-        margin-right: 0;
-      }
-    }
-    @include mq(md){
-      width: 23%;
-      margin-right: 2.6%;
-      height: 400px;
-      @include e(img){
-        height: 180px;
-      }
-      &:nth-child(3n){
-        margin-right: 2.6%;
-      }
-      &:nth-child(4n){
-        margin-right: 0;
+      &:after{
+        background: $color-text;
+        width: 25%;
+        height: 2px;
       }
     }
   }

@@ -23,101 +23,112 @@
     </div>
   </header>
   <main>
-    <div class="container">
-      <div class="row">
-          <div class="cover">
-          </div>
+    <div class="block">
+      <div class="container">
+      <div class="cover">
       </div>
-      <div class="row">
-        <div class="normal-layout stories">
-          <h2><span>POPULAR</span></h2>
-          <ul class="card-wrapper">
-          </ul>
-        </div>
-        <div class="dense-layout stories">
-          <h2><span>NEPAL'S STORIES</span></h2>
-          <ul class="card-wrapper">
-          </ul>
+      </div>
+    </div>
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="popular stories">
+            <h2><span>POPULAR</span></h2>
+            <ul class="card-wrapper">
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-  </main>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      var pulseAPI = "https://api.pulsenepal.com/api/v1/pulses";
-      $.getJSON(pulseAPI, {})
-        .done(function (response) {
-          if (response.status == "OK") {
-            var pulses = response.data;
+    <div class="block">
+      <div class="container">
+        <div class="row">
+          <div class="news stories">
+            <h2><span>NEPAL'S STORIES</span></h2>
+            <ul class="card-wrapper">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript">
+(function () {
+  var pulseAPI = "https://api.pulsenepal.com/api/v1/pulses";
+  $.getJSON(pulseAPI, {})
+  .done(function (response) {
+    if (response.status == "OK") {
+      var pulses = response.data;
 
-            if (pulses.hot.length > 0) {
-              var pulse = pulses.hot[0];
-              var div = '<div class="cover__wrapper">'+
-                      '<a href=" ' + pulse.url + ' " target="_blank">' +
-                      '<div class="cover__overlay"></div>' +
-                      '<div class="cover__img">' +
-                        '<img src="' + pulse.lead_image_url + '" alt="">'+
-                      '</div>'+
-                      '<div class="cover__info">'+
-                      '<span class="cover__smtext">Cover Story</span>'+
-                      '<h3 class="cover__title"> ' + pulse.title + ' </h3>'+
-                      '<ul class="cover__infobar">'+
-                        '<li>' + pulse.domain + '</li>'+
-                      '</ul>'+
-                      '</div>'+
-                      '</a>'+
-                    '</div>'
-              $(".cover").append(div);
-            }
+      if (pulses.hot.length > 0) {
+        var pulse = pulses.hot[0];
+        var div = '<div class="cover__wrapper">'+
+        '<a href=" ' + pulse.url + ' " target="_blank">' +
+        '<div class="cover__overlay"></div>' +
+        '<div class="cover__img">' +
+        '<img src="' + pulse.lead_image_url + '" alt="">'+
+        '</div>'+
+        '<div class="cover__info">'+
+        '<span class="cover__smtext">Cover Story</span>'+
+        '<h3 class="cover__title"> ' + pulse.title + ' </h3>'+
+        '<ul class="cover__infobar">'+
+        '<li>' + pulse.domain + '</li>'+
+        '</ul>'+
+        '</div>'+
+        '</a>'+
+        '</div>'
+        $(".cover").append(div);
+      }
 
-            if (pulses.popular.length > 0) {
-              var popular = pulses.popular;
-              for (var i = 0; i < popular.length; i++) {
-               var pulse = popular[i];
-               var li = '<li class="card">'+
-                         '<a href=" ' + pulse.url + ' " target="_blank">' +
-                         '<div class="card__img">' +
-                            '<img src="' + pulse.lead_image_url + '" alt="">'+
-                          '</div>'+
-                          '<div class="card__info">'+
-                          '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
-                          '<ul class="card__infobar">'+
-                            '<li>' + pulse.domain + '</li>'+
-                          '</ul>'+
-                          '<p class="card__para">' + pulse.excerpt + '</p>'+
-                          '</div>'+
-                          '</a>'+
-                        '</li>'
+      if (pulses.popular.length > 0) {
+        var popular = pulses.popular;
+        for (var i = 0; i < popular.length; i++) {
+          var pulse = popular[i];
+          var li = '<li class="card">'+
+          '<a href=" ' + pulse.url + ' " target="_blank">' +
+          '<div class="card__img">' +
+          '<img src="' + pulse.lead_image_url + '" alt="">'+
+          '</div>'+
+          '<div class="card__info">'+
+          '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
+          '<ul class="card__infobar">'+
+          '<li>' + pulse.domain + '</li>'+
+          '</ul>'+
+          '<p class="card__para">' + pulse.excerpt + '</p>'+
+          '</div>'+
+          '</a>'+
+          '</li>'
 
-                  $(".normal-layout .card-wrapper").append(li);
-              }
-            }
-            if (pulses.all.length > 0) {
-              var all = pulses.all;
-              for (var i = 0; i < all.length; i++) {
-               var pulse = all[i];
-               var li = '<li class="card">'+
-                         '<a href=" ' + pulse.url + ' " target="_blank">' +
-                         '<div class="card__img">' +
-                            '<img src="' + pulse.lead_image_url + '" alt="">'+
-                          '</div>'+
-                          '<div class="card__info">'+
-                          '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
-                          '<ul class="card__infobar">'+
-                            '<li>' + pulse.domain + '</li>'+
-                          '</ul>'+
-                          '<p class="card__para">' + pulse.excerpt + '</p>'+
-                          '</div>'+
-                          '</a>'+
-                        '</li>'
+          $(".popular .card-wrapper").append(li);
+        }
+      }
+      if (pulses.all.length > 0) {
+        var all = pulses.all;
+        for (var i = 0; i < all.length; i++) {
+          var pulse = all[i];
+          var li = '<li class="card">'+
+          '<a href=" ' + pulse.url + ' " target="_blank">' +
+          '<div class="card__img">' +
+          '<img src="' + pulse.lead_image_url + '" alt="">'+
+          '</div>'+
+          '<div class="card__info">'+
+          '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
+          '<ul class="card__infobar">'+
+          '<li>' + pulse.domain + '</li>'+
+          '</ul>'+
+          '<p class="card__para">' + pulse.excerpt + '</p>'+
+          '</div>'+
+          '</a>'+
+          '</li>'
 
-                $(".dense-layout .card-wrapper").append(li);
-              }
-            }
-          }
-        });
-    })();
-  </script>
+          $(".news .card-wrapper").append(li);
+        }
+      }
+    }
+  });
+})();
+</script>
 </body>
 </html>
