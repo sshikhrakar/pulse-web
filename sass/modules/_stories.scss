@@ -11,6 +11,7 @@
   position: relative;
   &:nth-child(3n){
     border-right: 0;
+    margin-right: 0;
   }
   &:after{
     position: absolute;
@@ -37,7 +38,7 @@
   @include e(img){
     display: block;
     width: 100%;
-    height: 130px;
+    height: 180px;
     overflow: hidden;
     img{
       object-fit: cover;
@@ -80,9 +81,6 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
   }
-  &:nth-child(3n){
-    margin-right: 0;
-  }
 }
 
 .stories{
@@ -104,6 +102,29 @@
         width: 25%;
         height: 2px;
       }
+    }
+  }
+}
+.news{
+  .card{
+    @include mq(md){
+      width: 20%;
+      height: 300px;
+      @include e(img){
+        height: 100px;
+      }
+      @include e(info){
+        padding-top: 10px;
+      }
+      @include e(title){
+        font-size: 16px;
+      }
+    }
+    &:nth-child(3n){
+      border-right: 1px solid $border-color;
+    }
+    &:nth-child(5n){
+      border-right: 0;
     }
   }
 }
