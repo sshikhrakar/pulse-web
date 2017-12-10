@@ -25,9 +25,7 @@
   <main>
     <div class="container">
       <div class="row">
-          <div class="highlight-layout stories">
-              <div class="card-wrapper">
-              </div>
+          <div class="cover">
           </div>
       </div>
       <div class="row">
@@ -52,24 +50,25 @@
         .done(function (response) {
           if (response.status == "OK") {
             var pulses = response.data;
-            
+
             if (pulses.hot.length > 0) {
               var pulse = pulses.hot[0];
-              var div = '<div>'+
+              var div = '<div class="cover__wrapper">'+
                       '<a href=" ' + pulse.url + ' " target="_blank">' +
-                      '<div class="card__img">' +
+                      '<div class="cover__overlay"></div>' +
+                      '<div class="cover__img">' +
                         '<img src="' + pulse.lead_image_url + '" alt="">'+
                       '</div>'+
-                      '<div class="card__info">'+
-                      '<h3 class="card__title"> ' + pulse.title + ' </h3>'+
-                      '<ul class="card__infobar">'+
+                      '<div class="cover__info">'+
+                      '<span class="cover__smtext">Cover Story</span>'+
+                      '<h3 class="cover__title"> ' + pulse.title + ' </h3>'+
+                      '<ul class="cover__infobar">'+
                         '<li>' + pulse.domain + '</li>'+
                       '</ul>'+
-                      '<p class="card__para">' + pulse.excerpt + '</p>'+
                       '</div>'+
                       '</a>'+
                     '</div>'
-              $(".highlight-layout .card-wrapper").append(div);
+              $(".cover").append(div);
             }
 
             if (pulses.popular.length > 0) {
