@@ -119,12 +119,12 @@
       @include e(title){
         font-size: 16px;
       }
-    }
-    &:nth-child(3n){
-      border-right: 1px solid $border-color;
-    }
-    &:nth-child(5n){
-      border-right: 0;
+      &:nth-child(3n){
+        border-right: 1px solid $border-color;
+      }
+      &:nth-child(5n){
+        border-right: 0;
+      }
     }
   }
 }

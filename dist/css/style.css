@@ -1534,13 +1534,18 @@ img {
   vertical-align: top; }
 
 main {
-  margin-bottom: 30px; }
+  margin: 70px 0 30px; }
 
 header {
   height: 70px;
   border-bottom: 1px solid #E6EAEA;
   padding: 20px;
-  background: #fff; }
+  background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; }
 
 .logo {
   font-size: 24px;
@@ -1701,13 +1706,11 @@ header {
     .news .card__info {
       padding-top: 10px; }
     .news .card__title {
-      font-size: 16px; } }
-
-.news .card:nth-child(3n) {
-  border-right: 1px solid #ececec; }
-
-.news .card:nth-child(5n) {
-  border-right: 0; }
+      font-size: 16px; }
+    .news .card:nth-child(3n) {
+      border-right: 1px solid #ececec; }
+    .news .card:nth-child(5n) {
+      border-right: 0; } }
 
 @media (min-width: 768px) {
   .is-collapsed-mobile {
