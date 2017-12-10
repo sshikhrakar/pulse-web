@@ -1548,15 +1548,20 @@ header {
   z-index: 999; }
 
 .logo {
-  font-size: 24px;
-  letter-spacing: 2px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #df252c; }
+  background: url(../images/logo.png); }
 
 .block {
-  padding: 1.875rem 0;
-  border-bottom: 1px solid #ececec; }
+  padding: 1.875rem 0; }
+
+.header-block {
+  padding: 0.625rem 0; }
+
+.header-block .headline {
+  text-align: center;
+  margin-bottom: 5px;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px; }
 
 .cover {
   position: relative;
@@ -1619,7 +1624,10 @@ header {
   padding: 1.25rem;
   border: 1px solid #ececec;
   border-left: 0;
-  border-top: 0;
+  border-bottom: 0;
+  border-top: 1;
+  margin-bottom: 20px;
+  margin-top: 20px;
   position: relative; }
   .card:nth-child(3n) {
     border-right: 0;
@@ -1712,6 +1720,17 @@ header {
       border-right: 1px solid #ececec; }
     .news .card:nth-child(5n) {
       border-right: 0; } }
+
+.news .read-more {
+  text-align: center; }
+
+.news .read-more a {
+  margin: 0 auto;
+  background-color: #df252c;
+  padding: 8px 18px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none; }
 
 @media (min-width: 768px) {
   .is-collapsed-mobile {
