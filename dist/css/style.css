@@ -1537,31 +1537,34 @@ main {
   margin: 70px 0 30px; }
 
 header {
-  height: 70px;
+  height: 60px;
   border-bottom: 1px solid #E6EAEA;
-  padding: 20px;
   background: #fff;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 999; }
+  z-index: 999;
+  text-align: center; }
 
-.logo {
-  background: url(../images/logo.png); }
+.new-logo-button {
+  background-image: url(../images/pn-logo.png);
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+  left: 0; }
+
+.headline {
+  text-align: center;
+  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 15px auto; }
 
 .block {
   padding: 1.875rem 0; }
-
-.header-block {
-  padding: 0.625rem 0; }
-
-.header-block .headline {
-  text-align: center;
-  margin-bottom: 5px;
-  font-family: "Lato", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  font-size: 18px;
-  letter-spacing: 2px; }
 
 .cover {
   position: relative;

@@ -1,15 +1,29 @@
 header{
-  height: 70px;
+  height: 60px;
   border-bottom: 1px solid #E6EAEA;
-  padding: 20px;
   background: $white;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 999;
+  text-align: center;
 }
 
-.logo{
-  background: url(../images/logo.png);
+.new-logo-button {
+  background-image:url(../images/pn-logo.png);
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 60px;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+}
+
+.headline {
+  text-align: center;
+  font-family: $font-family--primary;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin: 15px auto;
 }
