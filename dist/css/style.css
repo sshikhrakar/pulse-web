@@ -1735,6 +1735,12 @@ header {
   text-align: center;
   text-decoration: none; }
 
+.news .read-more a.hide {
+  display: none; }
+
+.news .read-more a.disabled {
+  background-color: grey; }
+
 @media (min-width: 768px) {
   .is-collapsed-mobile {
     visibility: collapse;

@@ -141,4 +141,10 @@
     text-align: center;
     text-decoration: none;
   }
+  .read-more a.hide {
+    display:none;
+  }
+  .read-more a.disabled {
+    background-color:grey;
+  }
 }
