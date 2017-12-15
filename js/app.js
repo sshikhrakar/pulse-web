@@ -1,7 +1,6 @@
 var PN = {};
 PN.lastObjectId = '';
-// PN.apiUrl = 'https://api.pulsenepal.com/api';
-PN.apiUrl = 'http://localhost:8080/api';
+PN.apiUrl = 'https://api.pulsenepal.com/api';
 
 PN.renderCoverPulse = function(pulse) {
     var div = '<div class="cover__wrapper">' +
