@@ -7,9 +7,7 @@
   padding: rem(20px);
   border: 1px solid $border-color;
   border-left: 0;
-  border-bottom: 0;
-  border-top: 1;
-  margin-top: 20px;
+  border-top: 0;
   position: relative;
   &:nth-child(3n){
     border-right: 0;
@@ -92,6 +90,7 @@
     text-transform: uppercase;
     line-height: 1;
     padding-left: 20px;
+    margin-bottom: 10px;
     span{
       display: inline-block;
       background: $bg-gray;
@@ -132,7 +131,10 @@
 }
 
 .original-link {
-  float:right;
+  float: right;
+  color: $text-gray;
+  display: inline-block;
+  margin-top: 18px;
 }
 #pulse-content {
   width: 100%;

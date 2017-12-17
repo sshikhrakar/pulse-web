@@ -1,6 +1,6 @@
 header{
+  @extend %shadow;
   height: 60px;
-  border-bottom: 1px solid #E6EAEA;
   background: $white;
   position: fixed;
   top: 0;
@@ -10,14 +10,13 @@ header{
   text-align: center;
 }
 
-.new-logo-button {
-  background-image:url(../images/pn-logo.png);
-  background-repeat: no-repeat;
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  position: absolute;
-  left: 0;
+.logo{
+  a{
+    float: left;
+  }
+  img{
+    width: 60px;
+  }
 }
 
 .headline {
