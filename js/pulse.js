@@ -1,6 +1,6 @@
 $(document).ready(function(d) {
     var url = getUrlVar('url');
-    $("#pulse-content").append('<iframe id="pulse-content-frame" width="100%" height="100%" src="https://mercury.postlight.com/amp?url='+ url +'" />');
+    $("#pulse-content").append('<iframe id="pulse-content-frame" frameborder="0" width="100%" height="100%" src="https://mercury.postlight.com/amp?url='+ url +'" />');
 }(document));
 
 function getUrlVar(key){
