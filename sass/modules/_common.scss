@@ -1,0 +1,40 @@
+.common{
+  padding: 50px 0;
+  color: $text-gray;
+  a{
+    display: inline-block;
+  }
+  h2{
+    @extend %header;
+    padding: 0;
+    margin-bottom: 30px;
+    span{
+      font-size: 22px;
+    }
+  }
+  p{
+    margin-bottom: 10px;
+    color: $text-gray;
+  }
+  ul{
+    li{
+      margin-bottom: 10px;
+    }
+  }
+  @include e(section){
+    margin-bottom: 20px;
+  }
+}
+
+.list{
+  @include e(header){
+    font-weight: bold;
+  }
+  @include e(desc){
+    padding-left: 20px;
+  }
+}
+
+.wm{
+  background: url('../images/pn-wm.png') no-repeat bottom right / 30%;
+}
