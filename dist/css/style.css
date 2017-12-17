@@ -1746,6 +1746,13 @@ header {
     .news .card:nth-child(5n) {
       border-right: 0; } }
 
+#pulse-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0px; }
+
 @media (min-width: 768px) {
   .is-collapsed-mobile {
     visibility: collapse;

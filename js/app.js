@@ -4,7 +4,7 @@ PN.apiUrl = 'https://api.pulsenepal.com/api';
 
 PN.renderCoverPulse = function(pulse) {
     var div = '<div class="cover__wrapper">' +
-    '<a href=" ' + pulse.url + ' " target="_blank">' +
+    '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="cover__overlay"></div>' +
     '<div class="cover__img">' +
     '<img src="' + pulse.lead_image_url + '" alt="">' +
@@ -24,7 +24,7 @@ PN.renderCoverPulse = function(pulse) {
 
 PN.createPulseElement = function(pulse) {
     var li = '<li class="card">' +
-    '<a href=" ' + pulse.url + ' " target="_blank">' +
+    '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="card__img">' +
     '<img src="' + pulse.lead_image_url + '" alt="">' +
     '</div>' +
@@ -108,6 +108,10 @@ PN.fetchAndRenderPulses = function() {
         } else {
             PN.renderMainContent(pulses);
         }
+        
+        $('.pulse-link').click(function (e) {
+            window.location.href = 'pulse.html?url='+$(e.currentTarget).attr("data-url");
+        });
     });
 };
 

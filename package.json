@@ -19,7 +19,7 @@
     "imagemin": "imagemin images/**/* --out-dir=dist/images/",
     "start": "concurrently \"npm run watch:html\" \"npm run watch:js\" \"npm run watch:images\" \"npm run watch:fonts\" \"npm run watch:sass\" \"npm run serve\"",
     "build": "npm install && npm run clean:dist && npm run sass && npm run imagemin && npm run fonts && npm run js && npm run html",
-    "serve": "browser-sync start --server 'dist' --files 'dist' --port 8080",
+    "serve": "browser-sync start --server 'dist' --files 'dist' --port 3000",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
@@ -57,6 +57,8 @@
     "run-sequence": "^1.2.2"
   },
   "dependencies": {
-    "gh-pages": "^1.0.0"
+    "gh-pages": "^1.0.0",
+    "pseudomap": "^1.0.2",
+    "yallist": "^3.0.2"
   }
 }
