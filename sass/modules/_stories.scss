@@ -112,14 +112,14 @@
   }
 }
 
-.original-link {
-  float: right;
+.nav-link {
   color: $text-gray;
   display: inline-block;
   margin-top: 18px;
+  margin-left: 15px;
 }
 
-a.original-link:hover{
+a.nav-link:hover{
   color:$red;
   text-decoration: none;
 }

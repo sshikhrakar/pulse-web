@@ -112,7 +112,6 @@ PN.fetchAndRenderPulses = function() {
         $('.pulse-link').click(function (e) {
             window.location.href = 'pulse.html?url='+$(e.currentTarget).attr("data-url");
         });
-
         $('#loading-indicator').addClass('hide');
     });
 };
@@ -130,6 +129,9 @@ $(document).ready(function(d) {
 
     $('#terms-link').click(function (e) {
         window.location.href = 'terms.html';
+    });
+    $('#about-link').click(function (e) {
+        window.location.href = 'about.html';
     });
 
 }(document));
