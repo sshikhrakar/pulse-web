@@ -137,6 +137,11 @@
   margin-top: 18px;
 }
 
+a.original-link:hover{
+  color:$red;
+  text-decoration: none;
+}
+
 #pulse-content-frame {
   position:absolute;
   width: 70%;
