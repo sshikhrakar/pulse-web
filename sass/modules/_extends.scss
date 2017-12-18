@@ -18,14 +18,17 @@
   span{
     display: inline-block;
     background: $bg-gray;
-    // padding: 0 rem(30px);
     font-weight: bold;
     font-size: rem(14px);
     letter-spacing: 2px;
+    position: relative;
     &:after{
       background: $color-text;
       width: 25%;
       height: 2px;
+      position: absolute;
+      bottom: -14px;
+      left: 0;
     }
   }
 }

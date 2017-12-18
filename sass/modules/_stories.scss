@@ -112,25 +112,17 @@
   }
 }
 
-.nav-link {
-  color: $text-gray;
-  display: inline-block;
-  margin-top: 18px;
-  margin-left: 15px;
-}
-
-a.nav-link:hover{
-  color:$red;
-  text-decoration: none;
-}
-
 #pulse-content-frame {
   position:absolute;
-  width: 70%;
+  width: 100%;
   margin: 0 auto;
   top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
+  @include mq(sm){
+    width: 70%;
+  }
 }
 
 .loader,

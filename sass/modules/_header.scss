@@ -1,6 +1,13 @@
+%headline{
+  text-align: center;
+  font-family: $font-family--primary;
+  font-size: 18px;
+  letter-spacing: 2px;
+  padding: 17px 0;
+}
+
 header{
   @extend %shadow;
-  height: 60px;
   background: $white;
   position: fixed;
   top: 0;
@@ -20,9 +27,40 @@ header{
 }
 
 .headline {
+  @extend %headline;
+  display: none;
+  @include mq(sm){
+    display: block;
+  }
+  @include m(sm){
+    @extend %headline;
+    font-size: 14px;
+    display: block;
+    padding: 20px 0;
+    border: 1px solid $border-color;
+    @include mq(sm){
+      display: none;
+    }
+  }
+}
+
+.nav{
   text-align: center;
-  font-family: $font-family--primary;
-  font-size: 18px;
-  letter-spacing: 2px;
-  margin: 15px auto;
+  li{
+    display: inline-block;
+    margin: 1px 0 5px 10px;
+    @include mq(sm){
+      float: right;
+      margin: 18px 0 18px 10px;
+    }
+    a{
+      color: $text-gray;
+      display: inline-block;
+      font-size: 12px;
+      &:hover{
+        color:$red;
+        text-decoration: none;
+      }
+    }
+  }
 }
