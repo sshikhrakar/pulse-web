@@ -7,7 +7,7 @@ PN.renderCoverPulse = function(pulse) {
     '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="cover__overlay"></div>' +
     '<div class="cover__img">' +
-    '<img src="' + pulse.lead_image_url + '" alt="">' +
+    '<img src="' + pulse.lead_image_url + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
     '<div class="cover__info">' +
     '<span class="cover__smtext">Cover Story</span>' +
@@ -26,14 +26,13 @@ PN.createPulseElement = function(pulse) {
     var li = '<li class="card">' +
     '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="card__img">' +
-    '<img src="' + pulse.lead_image_url + '" alt="">' +
+    '<img src="' + pulse.lead_image_url + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
     '<div class="card__info">' +
     '<h3 class="card__title"> ' + pulse.title + ' </h3>' +
     '<ul class="card__infobar">' +
     '<li>' + pulse.domain + '</li>' +
     '</ul>' +
-    '<p class="card__para">' + pulse.excerpt + '</p>' +
     '</div>' +
     '</a>' +
     '</li>';
