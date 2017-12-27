@@ -1,7 +1,7 @@
 .card {
   background: $white-alt;
   width: 100%;
-  height: 270px;
+  height: 320px;
   float: left;
   overflow: hidden;
   padding: rem(20px);
@@ -25,7 +25,7 @@
     width: 33.33%;
   }
   @include mq(md){
-    height: 300px;
+    height: 320px;
   }
   &:hover{
     cursor:pointer;
@@ -57,12 +57,11 @@
     font-size: 20px;
   }
   @include e(infobar){
-    margin-top: 5px;
+    margin-top: 2px;
     li{
       float: left;
-      font-size: 14px;
+      font-size: 13px;
       color: $text-gray;
-      font-weight: bold;
       &:after{
         content: "|";
         margin: 0 5px;
@@ -94,7 +93,7 @@
   .card{
     @include mq(md){
       width: 25%;
-      height: 270px;
+      height: 265px;
       @include e(img){
         height: 130px;
       }
