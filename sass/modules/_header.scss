@@ -64,3 +64,15 @@ header{
     }
   }
 }
+
+.promo{
+  height: 200px;
+  @include m(left){
+    float: left;
+    width: 70%;
+  }
+  @include m(right){
+    float: right;
+    width: 30%;
+  }
+}
