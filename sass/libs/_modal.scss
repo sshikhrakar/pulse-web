@@ -1,0 +1,69 @@
+.modal {
+  display: none;
+  background: rgba(165, 165, 165, 0.8);
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  &-dialog {
+    position: relative;
+    background: $white;
+    top: 0;
+    bottom: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+    @include mq(sm){
+      margin: 30px auto;
+      width: 600px;
+      transform: translateY(-50%);
+      top: 10%;
+      bottom: auto;
+    }
+  }
+  @include m(left){
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    @include mq(sm){
+      float: left;
+      width: 40%;
+      height: auto;
+    }
+  }
+  @include m(right){
+    width: 100%;
+    padding: rem(30px);
+    text-align: center;
+    @include mq(sm){
+      float: right;
+    width: 60%;
+      text-align: left;
+    }
+  }
+  &.login{
+    .modal-dialog{
+      text-align: center;
+      min-height: 200px;
+      // background: url('../images/login.jpg') no-repeat center;
+      background-size: cover;
+      h1,h2,h3 {
+        font-family: $font-family--primary;
+        font-size: rem(18px);
+        letter-spacing: 2px;
+        margin-bottom: rem(30px);
+      }
+    }
+  }
+}
+.login{
+  @include e(starter){
+    margin-top: rem(30px);
+  }
+}
+
+.text--sm{
+  font-size: 12px;
+  margin-bottom: 10px;
+}

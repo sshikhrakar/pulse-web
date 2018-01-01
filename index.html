@@ -77,6 +77,7 @@
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!--build:css css/style.css-->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://unpkg.com/animate.css@3.5.2/animate.css" type="text/css" />
   <!--endbuild-->
 </head>
 
@@ -96,6 +97,7 @@
       <strong>PULSENEPAL</strong>, NEPAL'S TOP STORIES
     </div>
     <ul class="nav col-xs-12 col-sm-3">
+      <li><a href="#" id="showModal">Login</a></li>
       <li><a href="#" title="privacy and terms" id="terms-link">Privacy &amp; Terms</a></li>
       <li><a href="#" title="about us" id="about-link">About</a></li>
     </ul>
@@ -140,11 +142,53 @@
         </div>
       </div>
     </div>
-    </div>
-    </div>
   </main>
+
+
+    <div id="modal" class="modal login">
+      <div class="modal-dialog animated">
+        <div class="modal-content">
+          <form class="form-horizontal" method="get">
+            <button class="btn--round" onclick="modal.close();">&times;</button>
+            <div class="modal--left">
+              <img src="images/promo.jpg" alt="">
+            </div>
+            <div class="modal--right">
+              <h2 class="login__title">SIGN IN TO PULSENEPAL</h2>
+              <button class="btn__fb">Login with Facebook</button>
+              <div class="login__starter">
+                <p class="text--sm">Not registered to PulseNepal?</p>
+                <button class="btn__fb--alt">Sign up with Facebook</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/modal.min.js"></script>
+  <script type="text/javascript">
+    window.onload = function () {
+      var modal = new RModal(document.getElementById('modal'), {
+        focus: false,
+        dialogOpenClass: 'animated fadeInDown',
+        dialogCloseClass: 'animated fadeOutUp'
+      });
+
+      document.addEventListener('keydown', function (ev) {
+        modal.keydown(ev);
+      }, false);
+
+      document.getElementById('showModal').addEventListener("click", function (ev) {
+        ev.preventDefault();
+        modal.open();
+      }, false);
+
+      window.modal = modal;
+    }
+  </script>
 </body>
 
 </html>

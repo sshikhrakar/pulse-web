@@ -1,3 +1,10 @@
+%btn{
+  padding: 8px 18px;
+  text-decoration: none;
+  display: inline-block;
+  border: 0;
+  outline: none;
+}
 .btn{
   &-wrapper{
     margin-top: rem(30px);
@@ -23,6 +30,43 @@
     &.disabled{
       border-color: $gray;
       color: $gray;
+    }
+  }
+  @include e(fb){
+    @extend %btn;
+    background: #3b5999;
+    color: $white;
+    &:hover{
+      background: darken(#3b5999, 10%);
+    }
+    @include m(alt){
+      @extend %btn;
+      color: $white;
+      background: rgba(59, 89, 153, 0.9);
+      &:hover{
+      background: darken(rgba(59, 89, 153, 0.9), 10%);
+    }
+    }
+  }
+  @include m(round){
+    position: absolute;
+    right: 18px;
+    top: 18px;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    border: 0;
+    font-size: 24px;
+    line-height: 32px;
+    border-radius: 50%;
+    -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.4);
+    &:hover{
+      color: $primary-color;
+    }
+    @include mq(sm){
+      top: 0;
+      right: -14px;
     }
   }
 }
