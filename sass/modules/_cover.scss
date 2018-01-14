@@ -1,3 +1,12 @@
+@mixin grad($deg,$r, $g, $b, $alpha){
+  background-image: -webkit-linear-gradient($deg, rgba($r, $g, $b, $alpha - 0.77) 0%,
+    rgba($r, $g, $b, $alpha - 0.77) 10%, rgba($r, $g, $b, $alpha - 0.77) 20%,
+    rgba($r, $g, $b, $alpha - 0.77) 30%, rgba($r, $g, $b, $alpha - 0.76) 40%,
+    rgba($r, $g, $b, $alpha - 0.64) 50%, rgba($r, $g, $b, $alpha - 0.43) 60%,
+    rgba($r, $g, $b, $alpha - 0.22) 70%, rgba($r, $g, $b, $alpha - .09) 80%,
+    rgba($r, $g, $b, $alpha - 0.02) 90%, rgba($r, $g, $b, $alpha) 100%);
+}
+
 .cover{
   position: relative;
   height: 260px;
@@ -27,12 +36,14 @@
     right: 0;
     left: 0;
     bottom: 0;
-    background-image: -webkit-linear-gradient(-98deg, rgba(36, 50, 65, 0.082) 0%,
-    rgba(36, 50, 65, 0.082) 10%, rgba(36, 50, 65, 0.082) 20%,
-    rgba(36, 50, 65, 0.082) 30%, rgba(36, 50, 65, 0.09) 40%,
-    rgba(36, 50, 65, 0.216) 50%, rgba(36, 50, 65, 0.424) 60%,
-    rgba(36, 50, 65, 0.63) 70%, rgba(36, 50, 65, 0.76) 80%,
-    rgba(36, 50, 65, 0.824) 90%, rgba(36, 50, 65, 0.847) 100%);
+    // background-image: -webkit-linear-gradient(-98deg, rgba(36, 50, 65, 0.082) 0%,
+    // rgba(36, 50, 65, 0.082) 10%, rgba(36, 50, 65, 0.082) 20%,
+    // rgba(36, 50, 65, 0.082) 30%, rgba(36, 50, 65, 0.09) 40%,
+    // rgba(36, 50, 65, 0.216) 50%, rgba(36, 50, 65, 0.424) 60%,
+    // rgba(36, 50, 65, 0.63) 70%, rgba(36, 50, 65, 0.76) 80%,
+    // rgba(36, 50, 65, 0.824) 90%, rgba(36, 50, 65, 0.847) 100%);
+
+    @include grad(-98deg, 36, 50, 65, 0.52);
   }
   @include e(info){
     position: absolute;
@@ -44,24 +55,25 @@
     color: $white;
     margin-bottom: rem(20px);
     text-transform: uppercase;
-    font-size: rem(12px);
-    letter-spacing: 1.5px;
+    font-size: rem(14px);
+    letter-spacing: 4px;
   }
   @include e(title){
-    font-size: rem(18px);
+    font-size: rem(20px);
     line-height: 24px;
     font-weight: bold;
     color: $white;
     letter-spacing: 3px;
     @include mq(md){
-      font-size: rem(36px);
-      line-height: 44px;
+      font-size: rem(52px);
+      line-height: 68px;
+      letter-spacing: 5px;
     }
   }
   @include e(infobar){
     color: $white;
     margin-top: rem(10px);
-    font-size: rem(12px);
+    font-size: rem(14px);
     letter-spacing: 1.5px;
   }
 }
