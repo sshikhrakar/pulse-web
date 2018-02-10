@@ -2,6 +2,25 @@ var PN = {};
 PN.lastObjectId = '';
 PN.apiUrl = 'https://api.pulsenepal.com/api';
 
+PN.renderFeaturePulse = function(pulse) {
+    var div = '<div class="feature__wrapper">' +
+        '<a href="#" class="pulse-link" data-url="' + pulse.url + '">' +
+        '<div class="cover__overlay"></div>' +
+        '<div class="feature__img" data-type="background" data-speed="1.4" style="background-image: url(' + pulse.lead_image_url + '); background-attachment: fixed;">' +
+        '</div>' +
+        '<div class="cover__info">' +
+        '<span class="cover__smtext">Highlight</span>' +
+        '<h3 class="cover__title"> ' + pulse.title + ' </h3>' +
+        '<ul class="cover__infobar">' +
+        '<li>' + pulse.domain + '</li>' +
+        '</ul>' +
+        '</div>' +
+        '</a>' +
+        '</div>'
+
+    $(".feature").append(div);
+};
+
 PN.renderCoverPulse = function(pulse) {
     var div = '<div class="cover__wrapper">' +
     '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
@@ -10,7 +29,7 @@ PN.renderCoverPulse = function(pulse) {
     '<img src="' + pulse.lead_image_url + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
     '<div class="cover__info">' +
-    '<span class="cover__smtext">Cover Story</span>' +
+    '<span class="cover__smtext">Highlight</span>' +
     '<h3 class="cover__title"> ' + pulse.title + ' </h3>' +
     '<ul class="cover__infobar">' +
     '<li>' + pulse.domain + '</li>' +
@@ -18,7 +37,7 @@ PN.renderCoverPulse = function(pulse) {
     '</div>' +
     '</a>' +
     '</div>'
-    
+
     $(".cover").append(div);
 };
 
@@ -78,7 +97,8 @@ PN.renderMorePulses = function(pulses) {
 PN.renderMainContent = function(pulses) {
     if (pulses.hot.length > 0) {
         var coverPulse = pulses.hot[0];
-        PN.renderCoverPulse(coverPulse);
+        // PN.renderCoverPulse(coverPulse);
+        PN.renderFeaturePulse(coverPulse);
     }
     if (pulses.popular.length > 0) {
         var popular = pulses.popular;
@@ -107,7 +127,7 @@ PN.fetchAndRenderPulses = function() {
         } else {
             PN.renderMainContent(pulses);
         }
-        
+
         $('.pulse-link').click(function (e) {
             window.location.href = 'pulse.html?url='+$(e.currentTarget).attr("data-url");
         });
@@ -118,7 +138,7 @@ PN.fetchAndRenderPulses = function() {
 $(document).ready(function(d) {
     PN.fetchAndRenderPulses();
 
-    //click event 
+    //click event
     $('#read-more-link').click(function (e) {
         e.preventDefault();
         $('#read-more-link').addClass('disabled');
