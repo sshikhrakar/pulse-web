@@ -6,7 +6,7 @@ PN.renderFeaturePulse = function(pulse) {
     var div = '<div class="feature__wrapper">' +
         '<a href="#" class="pulse-link" data-url="' + pulse.url + '">' +
         '<div class="cover__overlay"></div>' +
-        '<div class="feature__img" data-type="background" data-speed="1.4" style="background-image: url(' + pulse.lead_image_url + '); background-attachment: fixed;">' +
+        '<div class="feature__img" data-type="background" data-speed="1.4" style="background-image: url(' + PN.imageUrl(pulse.lead_image_url) + '); background-attachment: fixed;">' +
         '</div>' +
         '<div class="cover__info">' +
         '<span class="cover__smtext">Highlight</span>' +
@@ -26,7 +26,7 @@ PN.renderCoverPulse = function(pulse) {
     '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="cover__overlay"></div>' +
     '<div class="cover__img">' +
-    '<img src="' + pulse.lead_image_url + '" alt="" title="'+pulse.excerpt+'">' +
+    '<img src="' + PN.imageUrl(pulse.lead_image_url) + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
     '<div class="cover__info">' +
     '<span class="cover__smtext">Highlight</span>' +
@@ -45,7 +45,7 @@ PN.createPulseElement = function(pulse) {
     var li = '<li class="card">' +
     '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
     '<div class="card__img">' +
-    '<img src="' + pulse.lead_image_url + '" alt="" title="'+pulse.excerpt+'">' +
+    '<img src="' + PN.imageUrl(pulse.lead_image_url) + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
     '<div class="card__info">' +
     '<h3 class="card__title"> ' + pulse.title + ' </h3>' +
@@ -58,6 +58,12 @@ PN.createPulseElement = function(pulse) {
 
     return li;
 };
+
+PN.imageUrl = function(url) {
+    var url = url.replace("http://", "");
+    url = url.replace("https://", "");
+    return "https://images.weserv.nl/?errorredirect=ssl:pulsenepal.com/images/pn-logo.png&url=" + url;
+}
 
 PN.renderPulsesInElement = function(pulses, parentElement) {
     for (var i = 0; i < pulses.length; i++) {
