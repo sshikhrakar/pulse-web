@@ -22,21 +22,20 @@ PN.renderFeaturePulse = function(pulse) {
 };
 
 PN.renderCoverPulse = function(pulse) {
-    var div = '<div class="cover__wrapper">' +
-    '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
-    '<div class="cover__overlay"></div>' +
-    '<div class="cover__img">' +
-    '<img src="' + PN.imageUrl(pulse.lead_image_url) + '" alt="" title="'+pulse.excerpt+'">' +
-    '</div>' +
-    '<div class="cover__info">' +
-    '<span class="cover__smtext">Highlight</span>' +
-    '<h3 class="cover__title"> ' + pulse.title + ' </h3>' +
-    '<ul class="cover__infobar">' +
-    '<li>' + pulse.domain + '</li>' +
-    '</ul>' +
-    '</div>' +
-    '</a>' +
-    '</div>'
+    var div = '<div class="feature__wrapper">' +
+        '<a href="#" class="pulse-link" data-url="' + pulse.url + '">' +
+        '<div class="cover__overlay"></div>' +
+        '<div class="feature__img" data-type="background" data-speed="1.4" style="background-image: url(../images/banner.jpg); background-attachment: fixed;">' +
+        '</div>' +
+        '<div class="cover__info">' +
+        '<span class="cover__smtext">@pulsenepal</span>' +
+        '<h3 class="cover__title"></h3>' +
+        '<ul class="cover__infobar">' +
+        '<li></li>' +
+        '</ul>' +
+        '</div>' +
+        '</a>' +
+        '</div>'
 
     $(".cover").append(div);
 };
@@ -103,7 +102,7 @@ PN.renderMorePulses = function(pulses) {
 PN.renderMainContent = function(pulses) {
     if (pulses.hot.length > 0) {
         var coverPulse = pulses.hot[0];
-        // PN.renderCoverPulse(coverPulse);
+        PN.renderCoverPulse(coverPulse);
         PN.renderFeaturePulse(coverPulse);
     }
     if (pulses.popular.length > 0) {
