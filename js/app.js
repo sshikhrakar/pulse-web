@@ -23,7 +23,7 @@ PN.renderFeaturePulse = function(pulse) {
 
 PN.renderCoverPulse = function(pulse) {
     var div = '<div class="feature__wrapper">' +
-        '<a href="#" class="pulse-link" data-url="' + pulse.url + '">' +
+        '<a href="'+ pulse.url +'" class="pulse-link" target="_blank">' +
         '<div class="cover__overlay"></div>' +
         '<div class="feature__img" data-type="background" data-speed="1.4" style="background-image: url(../images/banner.jpg); background-attachment: fixed;">' +
         '</div>' +
@@ -42,7 +42,7 @@ PN.renderCoverPulse = function(pulse) {
 
 PN.createPulseElement = function(pulse) {
     var li = '<li class="card">' +
-    '<a href="#" class="pulse-link" data-url="'+ pulse.url +'">' +
+    '<a href="'+ pulse.url +'" class="pulse-link" target="_blank">' +
     '<div class="card__img">' +
     '<img src="' + PN.imageUrl(pulse.lead_image_url) + '" alt="" title="'+pulse.excerpt+'">' +
     '</div>' +
@@ -132,10 +132,6 @@ PN.fetchAndRenderPulses = function() {
         } else {
             PN.renderMainContent(pulses);
         }
-
-        $('.pulse-link').click(function (e) {
-            window.location.href = 'pulse.html?url='+$(e.currentTarget).attr("data-url");
-        });
         $('#loading-indicator').addClass('hide');
     });
 };
